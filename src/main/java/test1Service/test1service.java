@@ -9,7 +9,6 @@ import io.grpc.stub.StreamObserver;
 public class test1service extends test1serviceImplBase {
     @Override
     public void fun1(Test1.func1Request request, StreamObserver<Test1.func1Response> responseObserver) {
-        super.fun1(request, responseObserver);
 
         String name = request.getName();
         String dob = request.getDob();

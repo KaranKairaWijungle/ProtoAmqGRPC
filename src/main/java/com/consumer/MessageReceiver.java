@@ -26,6 +26,8 @@ public class MessageReceiver {
 
     public static void handle_gRPC(Message AMQ_Message) throws JMSException {
 
+        BasicConfigurator.configure();
+
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext().build();
 
         MapMessage message = (MapMessage) AMQ_Message;
@@ -36,6 +38,7 @@ public class MessageReceiver {
 
         // Parameters for gRPC build
         func1Request data = func1Request.newBuilder().setName(name).setDob(dob).build();
+
         //now make stub
         test1serviceBlockingStub stub =  test1serviceGrpc.newBlockingStub(channel);
 
