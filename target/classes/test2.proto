@@ -1,0 +1,5 @@
+syntax = "proto3";
+option java_package = "com.test2";
+
+service test2service{
+}

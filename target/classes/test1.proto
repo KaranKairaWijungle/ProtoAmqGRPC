@@ -1,0 +1,15 @@
+syntax = "proto3";
+option java_package = "com.test1";
+
+
+service test1service{
+  rpc fun1(func1Request) returns (func1Response);
+
+}
+message func1Request{
+  string name =1;
+  string dob = 2;
+}
+message func1Response{
+  string sentence=1;
+}
